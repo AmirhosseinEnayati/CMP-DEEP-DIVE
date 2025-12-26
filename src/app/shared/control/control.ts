@@ -5,7 +5,10 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   standalone: false,
   templateUrl: './control.html',
   styleUrl: './control.css',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    class: 'control',
+  },
 })
 export class Control {
   @Input({ required: true }) label!: string;
