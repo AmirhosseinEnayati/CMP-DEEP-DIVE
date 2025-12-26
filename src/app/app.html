@@ -2,55 +2,53 @@
 
 <main>
   <div id="dashboard">
-    <div class="dashboard-item">
-      <article>
-        <header>
-          <img src="status.png" alt="A signal symbol" />
-          <h2>Server Status</h2>
-        </header>
-        <div>
-          @if (currentStatus === 'online') {
-          <p>Servers are online</p>
-          <p>All systems are operational.</p>
-          } @else if (currentStatus === 'offline') {
-          <p>Servers are offline</p>
-          <p>Functionality should be restored soon.</p>
-          } @else {
-          <p>Server status is unknown</p>
-          <p>Fetching server status failed.</p>
-          }
-        </div>
-      </article>
-    </div>
+    <app-dashboard-item [image]="{ src: 'status.png', alt: 'Server Status' }" title="Server Status">
+      <div>
+        @if (currentStatus === 'online') {
+        <p>Servers are online</p>
+        <p>All systems are operational.</p>
+        } @else if (currentStatus === 'offline') {
+        <p>Servers are offline</p>
+        <p>Functionality should be restored soon.</p>
+        } @else {
+        <p>Server status is unknown</p>
+        <p>Fetching server status failed.</p>
+        }
+      </div>
+    </app-dashboard-item>
 
-    <div class="dashboard-item">
-      <article>
-        <header>
-          <img src="globe.png" alt="A globe" />
-          <h2>Traffic</h2>
-        </header>
-        <div id="traffic">
-          <p>Last 7 days</p>
+    <app-dashboard-item [image]="{ src: 'globe.png', alt: 'Traffic' }" title="Traffic">
+      <div>
+        <article>
+          <header>
+            <img src="globe.png" alt="A globe" />
+            <h2>Traffic</h2>
+          </header>
+          <div id="traffic">
+            <p>Last 7 days</p>
 
-          <div id="chart">
-            @for (dataPoint of dummyTrafficData; track dataPoint.id) {
-            <div [style.height]="(dataPoint.value / maxTraffic) * 100 + '%'"></div>
-            }
+            <div id="chart">
+              @for (dataPoint of dummyTrafficData; track dataPoint.id) {
+              <div [style.height]="(dataPoint.value / maxTraffic) * 100 + '%'"></div>
+              }
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
+        </article>
+      </div>
+    </app-dashboard-item>
 
-    <div class="dashboard-item">
-      <article>
-        <header>
-          <img src="list.png" alt="A list of items" />
-          <h2>Support Tickets</h2>
-        </header>
-        <div id="status">
-          <p>Todo...</p>
-        </div>
-      </article>
-    </div>
+    <app-dashboard-item [image]="{ src: 'list.png', alt: 'Support Tickets' }" title="Support Tickets">
+      <div>
+        <article>
+          <header>
+            <img src="list.png" alt="A list of items" />
+            <h2>Support Tickets</h2>
+          </header>
+          <div id="status">
+            <p>Todo...</p>
+          </div>
+        </article>
+      </div>
+    </app-dashboard-item>
   </div>
 </main>
