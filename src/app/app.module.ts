@@ -7,9 +7,10 @@ import { ServerStatus } from "./dashboard/server-status/server-status";
 import { ServerTraffic } from './dashboard/server-traffic/server-traffic';
 import { SupportTickets } from './dashboard/support-tickets/support-tickets';
 import { Button } from './shared/button/button';
+import { NewTicket } from './dashboard/support-tickets/new-ticket/new-ticket';
 
 @NgModule({
-  declarations: [App, Header, DashboardItem, ServerStatus, ServerTraffic, SupportTickets, Button],
+  declarations: [App, Header, DashboardItem, ServerStatus, ServerTraffic, SupportTickets, NewTicket, Button],
   bootstrap: [App],
   imports: [BrowserModule],
 })
