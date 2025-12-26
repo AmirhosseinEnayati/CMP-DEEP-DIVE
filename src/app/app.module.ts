@@ -5,9 +5,10 @@ import { Header } from './header/header';
 import { DashboardItem } from './dashboard/dashboard-item/dashboard-item';
 import { ServerStatus } from "./dashboard/server-status/server-status";
 import { ServerTraffic } from './dashboard/server-traffic/server-traffic';
+import { SupportTickets } from './dashboard/support-tickets/support-tickets';
 
 @NgModule({
-  declarations: [App, Header, DashboardItem, ServerStatus, ServerTraffic],
+  declarations: [App, Header, DashboardItem, ServerStatus, ServerTraffic, SupportTickets],
   bootstrap: [App],
   imports: [BrowserModule],
 })
