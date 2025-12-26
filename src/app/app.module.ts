@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Header } from './header/header';
 import { DashboardItem } from './dashboard/dashboard-item/dashboard-item';
 import { ServerStatus } from "./dashboard/server-status/server-status";
+import { ServerTraffic } from './dashboard/server-traffic/server-traffic';
 
 @NgModule({
-  declarations: [App, Header, DashboardItem, ServerStatus],
+  declarations: [App, Header, DashboardItem, ServerStatus, ServerTraffic],
   bootstrap: [App],
   imports: [BrowserModule],
 })
