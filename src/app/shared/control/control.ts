@@ -8,8 +8,12 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'control',
+    '(click)': 'onClick()',
   },
 })
 export class Control {
+  onClick() {
+    console.log('clicked');
+  }
   @Input({ required: true }) label!: string;
 }
