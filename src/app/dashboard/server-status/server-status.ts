@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './server-status.css',
 })
 export class ServerStatus {
-  currentStatus: string = 'online';
+  currentStatus: 'online' | 'offline' | 'unknown' = 'offline';
+
+  constructor() {
+    setInterval(() => {
+      const random = Math.random();
+      if (random < 0.3) this.currentStatus = 'online';
+      else if (random < 0.6) this.currentStatus = 'offline';
+      else this.currentStatus = 'unknown';
+    }, 5000);
+  }
 }
