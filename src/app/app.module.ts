@@ -9,10 +9,11 @@ import { SupportTickets } from './dashboard/support-tickets/support-tickets';
 import { Button } from './shared/button/button';
 import { NewTicket } from './dashboard/support-tickets/new-ticket/new-ticket';
 import { Control } from './shared/control/control';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [App, Header, DashboardItem, ServerStatus, ServerTraffic, SupportTickets, NewTicket, Button, Control],
   bootstrap: [App],
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule],
 })
 export class AppModule {}

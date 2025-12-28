@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './new-ticket.css',
 })
 export class NewTicket {
-
+  onSubmit(titleElement: HTMLInputElement) {
+    console.log(titleElement.value);
+  }
 }
