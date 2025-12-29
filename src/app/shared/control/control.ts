@@ -1,5 +1,7 @@
 import {
   AfterContentInit,
+  afterEveryRender,
+  afterNextRender,
   Component,
   contentChild,
   ElementRef,
@@ -12,28 +14,37 @@ import {
   selector: 'app-control',
   standalone: false,
   templateUrl: './control.html',
-  styleUrl: './control.css', 
+  styleUrl: './control.css',
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'control',
     '(click)': 'onClick()',
   },
 })
-export class Control implements AfterContentInit{
+export class Control implements AfterContentInit {
   @Input({ required: true }) label!: string;
   el = inject(ElementRef);
 
   private control = contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input');
 
+  constructor() {
+    afterEveryRender(() => {
+      console.log('afterRender');
+    });
+    afterNextRender(() => {
+      console.log('afterNextRender');;
+    });
+  }
+
   ngAfterContentInit(): void {
-    console.log("ngAfterContentInit");
+    console.log('ngAfterContentInit');
   }
 
   onClick() {
     console.log('clicked');
     console.log(this.el);
 
-    console.log("Controls:");
+    console.log('Controls:');
     console.log(this.control());
   }
 }
